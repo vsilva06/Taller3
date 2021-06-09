@@ -7,18 +7,104 @@ public class Ram {
     private int capacidad;
     private int frecuencia;
     private static Mensaje mensaje = new Mensaje();
-    private static Scanner tec = new Scanner(System.in);
 
 
-    public Ram(String marca, int capacidad, int frecuencia) {
-        this.marca = marca;
-        this.capacidad = capacidad;
-        this.frecuencia = frecuencia;
+
+    public Ram(boolean l) {
+        this.marca = "";
+        this.capacidad = 0;
+        this.frecuencia = 0;
     }
 
-    public Ram() {
+    public void edRam() {
+        establecerMarca();
+        establecerCapacidad();
+        establecerFrecuencia();
 
+    }
 
+    private void establecerFrecuencia() {
+        Scanner tec = new Scanner(System.in);
+        int opcion = -1;
+        do {
+            mensaje.mensaje("frecuecia");
+            try {
+                opcion = tec.nextInt();
+            } catch (Exception e) {
+                mensaje.mensaje("error");
+                opcion = -1;
+            }
+
+            switch (opcion) {
+                case 1:
+                    this.capacidad = 1333;
+                    break;
+                case 2:
+                    this.capacidad = 1600;
+                    break;
+                case 3:
+                    this.capacidad = 1866;
+                    break;
+                case 4:
+                    this.capacidad = 2133;
+                    break;
+                case 5:
+                    this.capacidad = 2400;
+                    break;
+                default:
+                    mensaje.mensaje("error");
+                    break;
+                case 0:
+                    opcion = 0;
+                    break;
+            }
+        }while (opcion!=0);
+
+    }
+
+    private void establecerCapacidad() {
+        Scanner tec = new Scanner(System.in);
+        int opcion = -1;
+        do {
+            try {
+                mensaje.mensaje("capacidad");
+                opcion = tec.nextInt();
+            } catch (Exception e) {
+                mensaje.mensaje("error");
+                opcion = -1;
+            }
+
+            switch (opcion) {
+                case 1:
+                    this.capacidad = 2;
+                    break;
+                case 2:
+                    this.capacidad = 4;
+                    break;
+                case 3:
+                    this.capacidad = 8;
+                    break;
+                case 4:
+                    this.capacidad = 16;
+                    break;
+                case 5:
+                    this.capacidad = 32;
+                    break;
+                default:
+                    mensaje.mensaje("error");
+                    break;
+                case 0:
+                    opcion = 0;
+                    break;
+            }
+        }while (opcion!=0);
+
+    }
+
+    private void establecerMarca() {
+        Scanner tec = new Scanner(System.in);
+        mensaje.mensaje("marca");
+        this.marca= tec.next();
     }
 
     public String getMarca() {

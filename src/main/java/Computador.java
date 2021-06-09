@@ -9,17 +9,18 @@ public class Computador {
     private static Scanner tec = new Scanner(System.in);
 
 
-    public Computador(String marca, String modelo, Ram ram) {
-        this.marca = marca;
-        this.modelo = modelo;
-        this.ram = ram;
+    public Computador(boolean l) {
+        this.marca = "";
+        this.modelo = "";
+        this.ram = new Ram(true);
     }
 
     public Computador() {
         establecerComputador();
+
     }
 
-    private void establecerComputador() {
+    public void establecerComputador() {
             editarMarca();
             editarModelo();
             editarRam();
@@ -28,16 +29,18 @@ public class Computador {
     }
 
     public void editarRam() {
-        this.ram = new Ram();
+        ram.edRam();
 
     }
 
     public void editarModelo() {
+        Scanner tec = new Scanner(System.in);
         mensaje.mensaje("modelo");
         this.modelo= tec.next();
     }
 
     public void editarMarca() {
+        Scanner tec = new Scanner(System.in);
         mensaje.mensaje("marca");
         this.marca = tec.next();
     }
