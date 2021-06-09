@@ -32,7 +32,7 @@ Para efectos de esta simulación, se debe considerar que:
 
 - el resto de los datos asociados a un computador y su memoria pueden ser considerados como cadenas de texto.
 
-- el menú en modo consola debe hacer uso de los métodos de un computador para que un usuario pueda onteractuar con elos.
+- el menú en modo consola debe hacer uso de los métodos de un computador para que un usuario pueda Interactuar con elLos.
 
 - considere el mínimo de métodos necesarios constructores con/sin parámetros, getter/setter, toString, etc. para implementar sus clases.
 
